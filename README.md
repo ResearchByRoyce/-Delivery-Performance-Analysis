@@ -131,42 +131,8 @@ This dataset does not include real order dates, ship dates, delivery dates, regi
 - Use high-risk operational segments to prioritize process improvement.
 - Replace the sequence-based month with real order or delivery dates if a richer dataset is available.
 
-## 🧾 Resume Bullet
-
-**Operations Performance Analysis | SQL**  
-Analyzed operational and delivery performance using SQL by calculating late delivery rates, service-pressure metrics, shipment method performance, product-risk segments, and warehouse trends. Applied `CASE WHEN` logic, aggregations, views, and window functions to identify performance bottlenecks and improvement opportunities.
-
 ## 🏁 Conclusion
 
 This project demonstrates how SQL can be used for operations performance analysis beyond basic sales reporting. It turns shipment data into useful KPIs, highlights possible delivery-risk drivers, and supports business decisions around warehouse performance, shipment methods, service pressure, and process improvement.
 
-## ▶️ How To Run
 
-1. Download the dataset from Kaggle.
-2. Create a PostgreSQL database.
-3. Run the `CREATE TABLE` section in `operations_performance_analysis.sql`.
-4. Import the CSV into `ecommerce_shipping_raw`.
-5. Run the remaining SQL sections in order.
-
-Example import command:
-
-```sql
-\copy ecommerce_shipping_raw (
-    id,
-    warehouse_block,
-    mode_of_shipment,
-    customer_care_calls,
-    customer_rating,
-    cost_of_the_product,
-    prior_purchases,
-    product_importance,
-    gender,
-    discount_offered,
-    weight_in_gms,
-    reached_on_time_y_n
-)
-FROM 'Train.csv'
-WITH (FORMAT csv, HEADER true);
-```
-
-The column list maps the CSV values by position after the header row is skipped, so the original header `Reached.on.Time_Y.N` can still be loaded into the cleaner SQL column `reached_on_time_y_n`.
